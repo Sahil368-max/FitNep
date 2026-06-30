@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.xmlp.org/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FitNep" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+    </style>
+
+    <style name="Theme.FitNep" parent="Base.Theme.FitNep" />
+
+    <style name="RoundedEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </style>
+
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primaryColor</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917180595984",
+    "project_id": "fitnep12-c5f1b",
+    "storage_bucket": "fitnep12-c5f1b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917180595984:android:7922e38ff5c6605b906f95",
+        "android_client_info": {
+          "package_name": "com.example.fitnep"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdgsvfQueL_2M1gPnJD4udS8RGWvbb60Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
