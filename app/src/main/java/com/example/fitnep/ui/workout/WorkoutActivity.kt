@@ -40,6 +40,9 @@ class WorkoutActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
         binding.fabAddWorkout.setOnClickListener {
             showAddWorkoutDialog()
         }
@@ -49,20 +52,31 @@ class WorkoutActivity : AppCompatActivity() {
         viewModel.workouts.observe(this) { resource ->
             when (resource) {
                 is Resource.Loading -> {
-                    // Show loading
+                    binding.progressBar.visibility = android.view.View.VISIBLE
                 }
                 is Resource.Success -> {
+                    binding.progressBar.visibility = android.view.View.GONE
                     adapter.submitList(resource.data ?: emptyList())
                 }
                 is Resource.Error -> {
+                    binding.progressBar.visibility = android.view.View.GONE
                     Toast.makeText(this, resource.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
 
         viewModel.operationStatus.observe(this) { resource ->
-            if (resource is Resource.Error) {
-                Toast.makeText(this, resource.message, Toast.LENGTH_SHORT).show()
+            when (resource) {
+                is Resource.Loading -> {
+                    binding.progressBar.visibility = android.view.View.VISIBLE
+                }
+                is Resource.Success -> {
+                    binding.progressBar.visibility = android.view.View.GONE
+                }
+                is Resource.Error -> {
+                    binding.progressBar.visibility = android.view.View.GONE
+                    Toast.makeText(this, resource.message, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

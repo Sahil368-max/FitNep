@@ -2,6 +2,7 @@ package com.example.fitnep.data.model
 
 data class Workout(
     val id: String = "",
+    val userId: String = "",
     val title: String = "",
     val description: String = "",
     val duration: String = "",
