@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.fitnep.R
 import com.example.fitnep.databinding.ActivityLoginBinding
 import com.example.fitnep.ui.dashboard.DashboardActivity
 import com.example.fitnep.ui.register.RegisterActivity
@@ -42,15 +43,20 @@ class LoginActivity : AppCompatActivity() {
             when (resource) {
                 is Resource.Loading -> {
                     binding.btnLogin.isEnabled = false
-                    // Optionally show a progress bar
+                    binding.progressBar.isVisible = true
+                    binding.btnLogin.text = ""
                 }
                 is Resource.Success -> {
                     binding.btnLogin.isEnabled = true
+                    binding.progressBar.isVisible = false
+                    binding.btnLogin.text = getString(R.string.login_button)
                     startActivity(Intent(this, DashboardActivity::class.java))
                     finish()
                 }
                 is Resource.Error -> {
                     binding.btnLogin.isEnabled = true
+                    binding.progressBar.isVisible = false
+                    binding.btnLogin.text = getString(R.string.login_button)
                     Toast.makeText(this, resource.message, Toast.LENGTH_SHORT).show()
                 }
             }
