@@ -22,14 +22,14 @@ class ExercisesActivity : AppCompatActivity() {
         }
 
         val exercises = listOf(
-            Exercise("Push Ups", "Chest"),
-            Exercise("Squats", "Legs"),
-            Exercise("Pull Ups", "Back"),
-            Exercise("Plank", "Core"),
-            Exercise("Lunges", "Legs"),
-            Exercise("Bench Press", "Chest"),
-            Exercise("Deadlift", "Full Body"),
-            Exercise("Shoulder Press", "Shoulders")
+            Exercise("Diamond Push Ups", "Chest", "Advanced", "10 min", android.R.drawable.ic_dialog_info, "Focuses on triceps and inner chest."),
+            Exercise("Pistol Squats", "Legs", "Advanced", "12 min", android.R.drawable.ic_dialog_info, "One-legged squats for ultimate balance and strength."),
+            Exercise("Muscle Ups", "Back", "Advanced", "15 min", android.R.drawable.ic_dialog_info, "Combines a pull-up and a dip into one powerful move."),
+            Exercise("L-Sit", "Core", "Intermediate", "5 min", android.R.drawable.ic_dialog_info, "Static hold for core and arm strength."),
+            Exercise("Bulgarian Split Squats", "Legs", "Intermediate", "15 min", android.R.drawable.ic_dialog_info, "Elevated rear leg squats for quad isolation."),
+            Exercise("Incline Bench Press", "Chest", "Intermediate", "20 min", android.R.drawable.ic_dialog_info, "Targets the upper chest muscles."),
+            Exercise("Sumo Deadlift", "Full Body", "Intermediate", "25 min", android.R.drawable.ic_dialog_info, "Wide stance deadlift for glute and inner thigh focus."),
+            Exercise("Military Press", "Shoulders", "Intermediate", "15 min", android.R.drawable.ic_dialog_info, "Strict overhead press for shoulder boulders.")
         )
 
         binding.rvExercises.apply {
