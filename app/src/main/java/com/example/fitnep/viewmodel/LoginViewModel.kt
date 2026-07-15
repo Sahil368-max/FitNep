@@ -9,8 +9,9 @@ import com.example.fitnep.data.repository.AuthRepository
 import com.example.fitnep.utils.Resource
 import kotlinx.coroutines.launch
 
-class LoginViewModel : ViewModel() {
-    private val repository = AuthRepository()
+class LoginViewModel @JvmOverloads constructor(
+    private val repository: AuthRepository = AuthRepository()
+) : ViewModel() {
 
     private val _loginStatus = MutableLiveData<Resource<User>>()
     val loginStatus: LiveData<Resource<User>> = _loginStatus
